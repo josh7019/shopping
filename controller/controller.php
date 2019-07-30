@@ -1,10 +1,11 @@
 <?php
-    // class Controller 
-    // {
-    //     private $doAction='';
-    //     public function execute($action)
-    //     {
-    //         $this->doAction=$action;
-    //         $this->doAction();
-    //     }
-    // }
+    
+    class Controller 
+    {
+        
+        public function __construct($action)
+        {
+            $this->$action();
+        }
+    }
+    

@@ -1,4 +1,27 @@
+<?php
+/* Smarty version 3.1.33, created on 2019-07-30 10:09:15
+  from 'C:\xampp\htdocs\shopping\views\login.html' */
 
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d3ffb2bc99411_38702235',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '5357c5c0575fa1759eb5742d137a1e2baa296255' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\shopping\\views\\login.html',
+      1 => 1564474153,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d3ffb2bc99411_38702235 (Smarty_Internal_Template $_smarty_tpl) {
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,9 +30,15 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src='../scripts/functions.js'></script>
-        <script type="text/javascript" src='../scripts/login.js'></script>
+        <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src='../scripts/functions.js'><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src='../scripts/login.js'><?php echo '</script'; ?>
+>
         <title>Document</title>
         <style>
             .myform {
@@ -87,9 +116,14 @@
             </fieldset>
             </form>
         </div>
-        <input type="hidden" id='message' value='{{$message}}'>
+        <input type="hidden" id='message' value='<?php ob_start();
+echo $_smarty_tpl->tpl_vars['message']->value;
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+'>
 
 
         
     </body>
-</html>
+</html><?php }
+}

@@ -103,7 +103,7 @@
             ## 去逗號
             $where_colum_string = substr($where_colum_string, 0, strlen($where_colum_string)-1);
             $where_value_string = substr($where_value_string, 0, strlen($where_value_string)-1);
-            $select_string = substr($select_string, 0, strlen($select_string)-1);
+            $select_string = substr($select_string, 0, strlen($select_string) - 1);
             ## 組成sql語法
             $sql = "select $select_string from $table 
             where ({$where_colum_string})  =  ($where_value_string)";

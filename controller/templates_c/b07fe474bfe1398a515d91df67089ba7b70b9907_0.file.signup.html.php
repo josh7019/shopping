@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.33, created on 2019-07-30 09:33:13
+  from 'C:\xampp\htdocs\shopping\views\signup.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.33',
+  'unifunc' => 'content_5d3ff2b9b2e8c7_38542865',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'b07fe474bfe1398a515d91df67089ba7b70b9907' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\shopping\\views\\signup.html',
+      1 => 1564461064,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5d3ff2b9b2e8c7_38542865 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -6,8 +29,12 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
         integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src='../scripts/functions.js'></script>
+        <?php echo '<script'; ?>
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ type="text/javascript" src='../scripts/functions.js'><?php echo '</script'; ?>
+>
         
         <title>Document</title>
         <style>
@@ -96,13 +123,22 @@
             </fieldset>
             </form>
         </div>
-        <input type="hidden" id='message' value='{{$message}}'>
+        <input type="hidden" id='message' value='<?php ob_start();
+echo $_smarty_tpl->tpl_vars['message']->value;
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+'>
         
-        <script type="text/javascript" src='../scripts/signup.js'></script>
-        <script>
+        <?php echo '<script'; ?>
+ type="text/javascript" src='../scripts/signup.js'><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+>
             
             
-        </script>
+        <?php echo '</script'; ?>
+>
         <!-- 清除message -->
     </body>
-</html>
+</html><?php }
+}
