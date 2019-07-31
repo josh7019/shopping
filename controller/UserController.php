@@ -1,9 +1,10 @@
 <?php
-    require_once('../model/user.php');
+    require_once('../model/User.php');
     require_once('../tools/CheckTool.php');
+    require_once('../model/all.php');
 
-    if (isset($_REQUEST['action'])) {
-        $action = $_REQUEST['action'];
+    if (isset($_POST['action'])) {
+        $action = $_POST['action'];
     } else {
         $action = 'login';
     }
@@ -26,6 +27,7 @@
             $user = new User();
             $user_account = $user->getAccount($account);
             echo json_encode($user_account);
+
         }
 
         /*
@@ -41,22 +43,23 @@
             $check_result = $check_tool->checkSignupFormat($account, $password, $name, $id_number);
             ## 判斷格式是否正確
             if (!$check_result) {
-                $data=[
+                $data = [
                     'alert' => '格式錯誤或帳號已存在',
                 ];
                 echo json_encode($data);
                 exit();
             }
+
             $user = new User;
             $password = password_hash($password, PASSWORD_DEFAULT);
             $is_success = $user->signup($account, $password, $name, $id_number);
             if ($is_success) {
-                $data=[
+                $data = [
                     'alert' => '註冊成功',
                     'location' => '../controller/PageController.php?action=login',
                 ];
             } else {
-                $data=[
+                $data = [
                     'alert' => '註冊失敗',
                 ];
             }
@@ -73,8 +76,8 @@
             $check_tool = new CheckTool;
             $is_format_right = $check_tool->checkLoginFormat($account, $password);
             ## 檢查格式
-            if (!$is_format_right){
-                $data=[
+            if (!$is_format_right) {
+                $data = [
                     'alert' => '格式錯誤',
                 ];
                 echo json_encode($data);
@@ -86,7 +89,13 @@
             if (isset($user_item['account'])){
                 if (password_verify($password, $user_item['password'])) {
                     $token = produceToken();
-
+                    $user->addToken($account, $token);
+                    setcookie('token', $token, time()+3600);
+                    $data=[
+                        'alert' => '登入成功',
+                        'location' => 'PageController.php?action=index',
+                    ];
+                    echo json_encode($data);
                 } else {
                     $data=[
                         'alert' => '密碼錯誤',
@@ -94,7 +103,18 @@
                     echo json_encode($data);
                 }
             }
-            // echo json_encode($_POST);
         }
 
+        /*
+         * 登出
+         */
+        public function logout()
+        {
+            setcookie ("token", "test", time()-100);
+            $data=[
+                'alert' => '登出成功',
+                'location' => 'PageController.php?action=index',
+            ];
+            echo json_encode($data);
+        }
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-30 09:33:13
+/* Smarty version 3.1.33, created on 2019-07-31 08:48:12
   from 'C:\xampp\htdocs\shopping\views\signup.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d3ff2b9b2e8c7_38542865',
+  'unifunc' => 'content_5d4139ac46c182_35883762',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b07fe474bfe1398a515d91df67089ba7b70b9907' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\signup.html',
-      1 => 1564461064,
+      1 => 1564555691,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d3ff2b9b2e8c7_38542865 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d4139ac46c182_35883762 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -39,10 +39,22 @@ function content_5d3ff2b9b2e8c7_38542865 (Smarty_Internal_Template $_smarty_tpl)
         <title>Document</title>
         <style>
             .myform{
-                margin-top:20%;border:solid 1px;width:50%;margin-left:25%;text-align:center;border-radius: 20px;
+                margin-top:20%;
+                width:50%;
+                margin-left:25%;
+                text-align:center;
+                border-radius: 20px;
             }
             body {
             font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
+            color:red;
+            background-color:#1c1c1c; 
+            }
+            #title {
+                color:red;
+            }
+            #signup_form {
+                background-color: #262626
             }
         </style>
     </head>
@@ -53,35 +65,55 @@ function content_5d3ff2b9b2e8c7_38542865 (Smarty_Internal_Template $_smarty_tpl)
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href=''>steak</a>
+                
+                <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
                 </div>
-
+            
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                    
-                    </ul>
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">Separated link</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="button" class="btn btn-default">搜尋商品</button>
+                    </form>
+                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+                    <li class="dropdown">
+                    </li>
+                </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-        </nav>
+    </nav>
         
         <div class='container'>        
             <form id='signup_form' class="form-horizontal myform">
             <fieldset>
 
             <!-- Form Name -->
-            <legend>註冊</legend>
+            <legend id='title'>註冊</legend>
             <!-- 帳號輸入 -->
             <div class="form-group">
-                <label class="col-md-4 control-label" for="Account">帳號</label><span id='account_Signal'></span>
+                <label class="col-md-4 control-label"  for="Account">帳號</label><span id='account_Signal'></span>
                 <div class="col-md-4">
-                    <input id="account" name="account" type="text" placeholder="請輸入帳號" class="form-control input-md" required="">    
+                    <input id="account" autocomplete='off' name="account" type="text" placeholder="請輸入帳號" class="form-control input-md" required="">    
                     <span class="help-block">7~20字元,開頭為英文,不得有符號</span> 
                 </div>
             </div>
@@ -133,9 +165,10 @@ echo $_prefixVariable1;?>
  type="text/javascript" src='../scripts/signup.js'><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
->
-            
-            
+ 
+        src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
+        crossorigin="anonymous">
         <?php echo '</script'; ?>
 >
         <!-- 清除message -->

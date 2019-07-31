@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 06:25:23
-  from 'C:\xampp\htdocs\shopping\views\product_manage.html' */
+/* Smarty version 3.1.33, created on 2019-07-31 16:59:38
+  from 'C:\xampp\htdocs\shopping\views\maneger_member.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d4118331cb490_05878987',
+  'unifunc' => 'content_5d41587a00d713_60813924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '550b8beef2f5de0a35560a39dbe1fc08c99de2e3' => 
+    '45b2f92f1b8341371223961f5fa609138d0f1dd4' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\shopping\\views\\product_manage.html',
-      1 => 1564543254,
+      0 => 'C:\\xampp\\htdocs\\shopping\\views\\maneger_member.html',
+      1 => 1564563575,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d41587a00d713_60813924 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -38,9 +38,7 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
         <title>Document</title>
         <style>
             .table-striped>thead>tr{
-                background-color: #ea6153;
-                border: solid;
-                border-top-left-radius: 50px;
+                background-color: #2980b9;
                 color: white;
                 }
             body {
@@ -75,8 +73,38 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <?php ob_start();
+if ($_smarty_tpl->tpl_vars['is_login']->value) {
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+
                     <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
                     <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <?php ob_start();
+} else {
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+
+                    <li><a href="PageController.php?action=logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
+                    <?php ob_start();
+}
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+
+                    <?php ob_start();
+if ($_smarty_tpl->tpl_vars['permission']->value == 5) {
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+
+                    <li class=""><a href="ManagerPageController.php?action=member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="managerPageController.php?action=product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
+                    <?php ob_start();
+}
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
+
+                    
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -98,13 +126,13 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                             <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                     <li class="dropdown">
                     </li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-    </nav>
+        </nav>
 
 
         <div class='container'>
@@ -115,28 +143,7 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                     <form id='add_message_form' class="form-horizontal" method='POST' action='../cont/addmessage.php'>
                         <fieldset>
                         <!-- Form Name -->
-                            <legend>商品管理</legend>
-                            <!-- 標題-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">標題</label>  
-                                <div class="col-md-4">
-                                    <input id="title" name="title" type="text" placeholder="上限30個字" class="form-control input-md">
-                                </div>
-                            </div>
-                            <!-- 內容 -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textarea">內容</label>
-                                <div class="col-md-4">                     
-                                    <textarea  class="form-control" id="content" name="content"></textarea>
-                                </div>
-                            </div>
-                            <!-- 按鈕 -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for=""></label>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                </div>
-                            </div>
+                            <legend style="color: red">會員管理</legend>
                         </fieldset>
                     </form>
                 </div><!-- 留言新增表格結束 -->
@@ -145,21 +152,25 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                 <table class="table table-striped" id='showTodoList'>
                     <thead>
                         <tr>
-                            <th>商品編號</th>
+                            <th>編號</th>
+                            <th>帳號</th>
                             <th>名稱</th>
-                            <th>商品狀態</th>
-                            <th>商品創建時間</th>
-                            <th>總銷售量</th>
+                            <th>帳戶狀態</th>
+                            <th>餘額</th>
+                            <th>帳號創建時間</th>
+                            <th>總消費金額</th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody id='messageArea'>
                         <tr class="item-color-1">
                             <td>0</td>
+                            <td>test</td>
                             <td>josh</td>
-                            <td>售賣中</td>
+                            <td>正常</td>
+                            <td>50</td>
                             <td>2019-07-29</td>
-                            <td>20</td>
+                            <td>1000</td>
                             <td>
                                 <span class="pull-right">
                                     <span class="btn btn-warning">
@@ -176,34 +187,36 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                             </td>
                         </tr>
                         <tr class="item-color-2">
-                                <td>0</td>
-                                <td>josh</td>
-                                <td>售賣中</td>
-                                <td>2019-07-29</td>
-                                <td>20</td>
-                                <td>
-                                    <span class="pull-right">
-                                        <span class="btn btn-warning">
-                                            <span class="glyphicon glyphicon-pencil">
-                                            </span>
-                                            編輯
+                            <td>0</td>
+                            <td>test</td>
+                            <td>josh</td>
+                            <td>正常</td>
+                            <td>50</td>
+                            <td>2019-07-29</td>
+                            <td>1000</td>
+                            <td>
+                                <span class="pull-right">
+                                    <span class="btn btn-warning">
+                                        <span class="glyphicon glyphicon-pencil">
                                         </span>
-                                        <span class="btn btn-danger">
-                                            <span class="glyphicon glyphicon-remove">
-                                            </span>
-                                            刪除
-                                        </span>
+                                        編輯
                                     </span>
-                                </td>
-                            </tr>
+                                    <span class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove">
+                                        </span>
+                                        刪除
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
                     </tbody>
                 </table><!-- 留言顯示區結束 -->
             </div>
         </div>
         <input type="hidden" id='message' value='<?php ob_start();
 echo $_smarty_tpl->tpl_vars['message']->value;
-$_prefixVariable1 = ob_get_clean();
-echo $_prefixVariable1;?>
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
 '>
         
         

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 06:25:23
-  from 'C:\xampp\htdocs\shopping\views\product_manage.html' */
+/* Smarty version 3.1.33, created on 2019-07-31 16:58:22
+  from 'C:\xampp\htdocs\shopping\views\manager_product.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d4118331cb490_05878987',
+  'unifunc' => 'content_5d41582e801cb9_05563708',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '550b8beef2f5de0a35560a39dbe1fc08c99de2e3' => 
+    '715e4840d826b58454bd968349ab543be0b2d37a' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\shopping\\views\\product_manage.html',
-      1 => 1564543254,
+      0 => 'C:\\xampp\\htdocs\\shopping\\views\\manager_product.html',
+      1 => 1564563501,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d41582e801cb9_05563708 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -39,7 +39,7 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
         <style>
             .table-striped>thead>tr{
                 background-color: #ea6153;
-                border: solid;
+                
                 border-top-left-radius: 50px;
                 color: white;
                 }
@@ -75,8 +75,38 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <?php ob_start();
+if ($_smarty_tpl->tpl_vars['is_login']->value) {
+$_prefixVariable1 = ob_get_clean();
+echo $_prefixVariable1;?>
+
                     <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
                     <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <?php ob_start();
+} else {
+$_prefixVariable2 = ob_get_clean();
+echo $_prefixVariable2;?>
+
+                    <li><a href="PageController.php?action=logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
+                    <?php ob_start();
+}
+$_prefixVariable3 = ob_get_clean();
+echo $_prefixVariable3;?>
+
+                    <?php ob_start();
+if ($_smarty_tpl->tpl_vars['permission']->value == 5) {
+$_prefixVariable4 = ob_get_clean();
+echo $_prefixVariable4;?>
+
+                    <li class=""><a href="ManagerPageController.php?action=member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="managerPageController.php?action=product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
+                    <?php ob_start();
+}
+$_prefixVariable5 = ob_get_clean();
+echo $_prefixVariable5;?>
+
+                    
+                    
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -98,13 +128,13 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                             <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                     <li class="dropdown">
                     </li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
-    </nav>
+        </nav>
 
 
         <div class='container'>
@@ -115,29 +145,9 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
                     <form id='add_message_form' class="form-horizontal" method='POST' action='../cont/addmessage.php'>
                         <fieldset>
                         <!-- Form Name -->
-                            <legend>商品管理</legend>
-                            <!-- 標題-->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textinput">標題</label>  
-                                <div class="col-md-4">
-                                    <input id="title" name="title" type="text" placeholder="上限30個字" class="form-control input-md">
-                                </div>
-                            </div>
-                            <!-- 內容 -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for="textarea">內容</label>
-                                <div class="col-md-4">                     
-                                    <textarea  class="form-control" id="content" name="content"></textarea>
-                                </div>
-                            </div>
-                            <!-- 按鈕 -->
-                            <div class="form-group">
-                                <label class="col-md-4 control-label" for=""></label>
-                                <div class="col-md-4">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                </div>
-                            </div>
+                            <legend style="color:red;">商品管理</legend>
                         </fieldset>
+                        <span class=pull-right><button class="btn btn-success">新增產品</button></span>
                     </form>
                 </div><!-- 留言新增表格結束 -->
                 
@@ -202,8 +212,8 @@ function content_5d4118331cb490_05878987 (Smarty_Internal_Template $_smarty_tpl)
         </div>
         <input type="hidden" id='message' value='<?php ob_start();
 echo $_smarty_tpl->tpl_vars['message']->value;
-$_prefixVariable1 = ob_get_clean();
-echo $_prefixVariable1;?>
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
 '>
         
         

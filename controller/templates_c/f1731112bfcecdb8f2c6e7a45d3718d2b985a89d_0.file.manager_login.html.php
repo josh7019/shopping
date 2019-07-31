@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 09:57:32
-  from 'C:\xampp\htdocs\shopping\views\login.html' */
+/* Smarty version 3.1.33, created on 2019-07-31 09:18:21
+  from 'C:\xampp\htdocs\shopping\views\manager_login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d4149ec522519_87377880',
+  'unifunc' => 'content_5d4140bd300a15_94738649',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '5357c5c0575fa1759eb5742d137a1e2baa296255' => 
+    'f1731112bfcecdb8f2c6e7a45d3718d2b985a89d' => 
     array (
-      0 => 'C:\\xampp\\htdocs\\shopping\\views\\login.html',
-      1 => 1564557490,
+      0 => 'C:\\xampp\\htdocs\\shopping\\views\\manager_login.html',
+      1 => 1564557499,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d4140bd300a15_94738649 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +37,7 @@ function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl)
  type="text/javascript" src='../scripts/functions.js'><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src='../scripts/login.js'><?php echo '</script'; ?>
+ type="text/javascript" src='../scripts/manager_login.js'><?php echo '</script'; ?>
 >
         <title>Document</title>
         <style>
@@ -53,7 +53,7 @@ function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl)
             font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
             color:#a6a6a6;
             background-color:#1c1c1c; 
-            }
+        }
             th {
                 text-align: center;
             }
@@ -81,8 +81,7 @@ function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <li class=""><a href="ManagerPageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 管理者登入 <span class="sr-only">(current)</span></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -97,17 +96,6 @@ function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl)
                       </li>
                 </ul>
                 
-                <ul class="nav navbar-nav navbar-right">
-                    <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="button" class="btn btn-default">搜尋商品</button>
-                    </form>
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
-                    <li class="dropdown">
-                    </li>
-                </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
     </nav>
@@ -119,7 +107,7 @@ function content_5d4149ec522519_87377880 (Smarty_Internal_Template $_smarty_tpl)
             <form id='login_form' class="form-horizontal myform" >
             <fieldset>
             <!-- Form Name -->
-            <legend id='title'>登入</legend>
+            <legend id='title'>管理者登入</legend>
             <!-- Text input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="Account">帳號</label>  

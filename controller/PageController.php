@@ -1,12 +1,14 @@
 <?php
     require_once('../smarty/smarty_init.php');
-
-    if (isset($_REQUEST['action'])) {
-        $action = $_REQUEST['action'];
+    require_once('../model/all.php');
+    
+    if (isset($_GET['action'])) {
+        $action = $_GET['action'];
     } else {
         $action = 'index';
     }
-        new PageController($action);
+    
+    new PageController($action);
     
     class PageController
     {
@@ -26,9 +28,14 @@
          */
         public function index()
         {
+            $is_login = (checkToken()) ? false : true;
+            $user_item = getToken();
             $smarty = new Smarty;
+            $smarty->assign('permission', $user_item['permission']);
+            $smarty->assign('is_login', $is_login);
             $smarty->display('../views/index.html');
         }
+
         /*
          * 註冊頁面
          */
@@ -37,6 +44,7 @@
             $smarty = new Smarty;
             $smarty->display('../views/signup.html');
         }
+
         /*
          * 登入頁面
          */
@@ -47,22 +55,25 @@
         }
         
         /*
-         * 會員管理頁面
+         * 購物車頁面
          */
-        public function memberManage()
+        public function shoppingCar()
         {
+            $is_login = (checkToken()) ? false : true;
             $smarty = new Smarty;
-            $smarty->display('../views/member_manage.html');
+            $smarty->assign('is_login', $is_login);
+            $smarty->display('../views/shopping_car.html');
         }
-        /*
-         * 產品管理頁面
-         */
-        public function productManage()
-        {
-            $smarty = new Smarty;
-            $smarty->display('../views/product_manage.html');
-        }
+
         /*
          * 頁面
          */
+        /*
+         * 登出頁面
+         */
+        public function logout()
+        {
+            $smarty = new Smarty;
+            $smarty->display('../views/logout.html');
+        }
     }

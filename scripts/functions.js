@@ -84,8 +84,10 @@ function showSingal($signal) {
     }
 }
 
+//跳轉頁面
 function direct($location) {
     if ($location) {
         window.location=$location;
     }
 }
+

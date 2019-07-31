@@ -1,5 +1,5 @@
 <?php
-    
+    require_once('User.php');
     /*
      * 產生token
      */
@@ -22,8 +22,8 @@
             $token = $_COOKIE['token'];
             $user_model = new User;
             $user_item = $user_model->getUserByToken($token);
-            if ($user_item['userId']) {
-                return $user_item;
+            if ($user_item['account']) {
+                return true;
             } else {
                 setcookie ("token", "delete", time()-100);
                 return false;
@@ -42,7 +42,7 @@
             $token = $_COOKIE['token'];
             $user_model = new User;
             $user_item = $user_model->getUserByToken($token);
-            if ($user_item['userId']) {
+            if ($user_item['user_id']) {
                 return $user_item;
             }
         }
