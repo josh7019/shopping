@@ -1,5 +1,8 @@
 <?php
     require_once('User.php');
+    require_once('../model/manager.php');
+    require_once('../tools/CheckTool.php');
+    require_once('../model/Product.php');
     /*
      * 產生token
      */
@@ -46,4 +49,36 @@
                 return $user_item;
             }
         }
+    }
+
+
+    function uploadImage($product_item){
+        $files = $_FILES["image"];
+        $product = new Product;
+            // echo json_encode($files);
+            if (!$files["error"]) {//判斷是否有誤
+                //判斷圖片格式及大小
+                if (($files["type"] == "image/png" || $files["type"] == "image/jpeg") && $files["size"] < 10240000) {
+                    //存放位置及檔名
+                    $file_type = (preg_match('/.jpg$/', $files['name'])) ? ".jpg" : ".png";
+                    $filename = 'product_id=' . $product_item['product_id'] . $file_type;
+                    $filepath = "../img/" . $filename;
+                    //檢查目錄是否存在
+                    if (!file_exists($filepath)) {
+                        $is_upload=move_uploaded_file($files["tmp_name"], $filepath);//存放檔案
+                        $product->updateImage($product_item['product_id'], $filename);
+                        $data = [
+                            'alert' => '新增產品及圖片成功',
+                            'location' => '../controller/managerpagecontroller.php?action=product'
+                        ];
+                    } else {
+                        $is_upload=move_uploaded_file($files["tmp_name"], $filepath);//存放檔案
+                        $product->updateImage($product_item['product_id'], $filename);
+                        $data = [
+                            'alert' => '修改圖片成功',
+                            'location' => '../controller/managerpagecontroller.php?action=product'
+                        ];
+                    }
+                }    
+            }
     }

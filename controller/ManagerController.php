@@ -1,6 +1,5 @@
 <?php
-    require_once('../model/manager.php');
-    require_once('../tools/CheckTool.php');
+    
     require_once('../model/all.php');
 
     if (isset($_REQUEST['action'])) {
@@ -55,5 +54,24 @@
                     echo json_encode($data);
                 }
             }
+        }
+
+        public function addProduct()
+        {
+            
+            $name = $_POST['name'];
+            $price = $_POST['price'];
+            $status = $_POST['status'];
+            $descript = $_POST['descript'];
+            $product = new Product;
+            $is_success = $product->addProduct($name, $price, $status, $descript);
+            $data = [
+                'alert' => '新增產品成功',
+                'location' => '../controller/managerpagecontroller.php?action=product'
+            ];
+            $product_item = $product->getNewProductId();
+            uploadImage($product_item);
+            echo json_encode($data);
+
         }
     }

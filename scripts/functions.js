@@ -59,7 +59,7 @@ function checkIdNumberFormat(id){
 
 // 檢查姓名格式
 function checkNameFormat(name){
-    if (name.match(/^[\u4e00-\u9fa5]{2,3}$/)) {
+    if (name.match(/^[\u4e00-\u9fa5]{2,4}$/)) {
         return true; 
     } else {    
         return false;
@@ -91,3 +91,12 @@ function direct($location) {
     }
 }
 
+//檢查內容是否為空
+function checkContent(str){   
+    // str = e.target.value;
+    if (str.match(/\S{1,}/)) {
+        return true;  
+    } else {    
+        return false;
+    }
+}

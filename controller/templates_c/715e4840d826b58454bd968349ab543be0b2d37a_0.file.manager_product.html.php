@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 16:58:22
+/* Smarty version 3.1.33, created on 2019-08-01 18:21:30
   from 'C:\xampp\htdocs\shopping\views\manager_product.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d41582e801cb9_05563708',
+  'unifunc' => 'content_5d42bd2aa14668_44704001',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '715e4840d826b58454bd968349ab543be0b2d37a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\manager_product.html',
-      1 => 1564563501,
+      1 => 1564654889,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d41582e801cb9_05563708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d42bd2aa14668_44704001 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -142,15 +142,15 @@ echo $_prefixVariable5;?>
             <div>
                 <!-- 留言新增表格 -->
                 <div id='addTodoList'>
-                    <form id='add_message_form' class="form-horizontal" method='POST' action='../cont/addmessage.php'>
+                    <form id='add_message_form' class="form-horizontal">
                         <fieldset>
                         <!-- Form Name -->
                             <legend style="color:red;">商品管理</legend>
                         </fieldset>
-                        <span class=pull-right><button class="btn btn-success">新增產品</button></span>
+                        <span class=pull-right><a href="managerpagecontroller.php?action=addproduct" class="btn btn-success">新增產品</a></span>
                     </form>
                 </div><!-- 留言新增表格結束 -->
-                
+
                 <!-- 留言顯示區 -->
                 <table class="table table-striped" id='showTodoList'>
                     <thead>
@@ -164,12 +164,57 @@ echo $_prefixVariable5;?>
                         </tr>
                     </thead>
                     <tbody id='messageArea'>
+                        <?php ob_start();
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['product_list']->value, 'product_item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['product_item']->value) {
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
+
                         <tr class="item-color-1">
-                            <td>0</td>
-                            <td>josh</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['product_item']->value['product_id'];
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
+</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['product_item']->value['name'];
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
+</td>
+                            <?php ob_start();
+if ($_smarty_tpl->tpl_vars['product_item']->value['status'] == 0) {
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;?>
+
+                            <td>待上架</td>
+                            <?php ob_start();
+} elseif ($_smarty_tpl->tpl_vars['product_item']->value['status'] == 1) {
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
+
                             <td>售賣中</td>
-                            <td>2019-07-29</td>
-                            <td>20</td>
+                            <?php ob_start();
+} elseif ($_smarty_tpl->tpl_vars['product_item']->value['status'] == 2) {
+$_prefixVariable11 = ob_get_clean();
+echo $_prefixVariable11;?>
+
+                            <td>已下架</td>
+                            <?php ob_start();
+}
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['product_item']->value['updated_at'];
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
+</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['product_item']->value['saled'];
+$_prefixVariable14 = ob_get_clean();
+echo $_prefixVariable14;?>
+</td>
                             <td>
                                 <span class="pull-right">
                                     <span class="btn btn-warning">
@@ -185,35 +230,21 @@ echo $_prefixVariable5;?>
                                 </span>
                             </td>
                         </tr>
-                        <tr class="item-color-2">
-                                <td>0</td>
-                                <td>josh</td>
-                                <td>售賣中</td>
-                                <td>2019-07-29</td>
-                                <td>20</td>
-                                <td>
-                                    <span class="pull-right">
-                                        <span class="btn btn-warning">
-                                            <span class="glyphicon glyphicon-pencil">
-                                            </span>
-                                            編輯
-                                        </span>
-                                        <span class="btn btn-danger">
-                                            <span class="glyphicon glyphicon-remove">
-                                            </span>
-                                            刪除
-                                        </span>
-                                    </span>
-                                </td>
-                            </tr>
+                        <?php ob_start();
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+$_prefixVariable15 = ob_get_clean();
+echo $_prefixVariable15;?>
+
                     </tbody>
                 </table><!-- 留言顯示區結束 -->
             </div>
         </div>
         <input type="hidden" id='message' value='<?php ob_start();
 echo $_smarty_tpl->tpl_vars['message']->value;
-$_prefixVariable6 = ob_get_clean();
-echo $_prefixVariable6;?>
+$_prefixVariable16 = ob_get_clean();
+echo $_prefixVariable16;?>
 '>
         
         

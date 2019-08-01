@@ -97,10 +97,24 @@
     <div class="container" style='text-align:center; '>
         <div class='row'>
             <div class="col-md-12" id='title'>
-                <h2>{{if $permission}}{{$permission}}{{/if}}商品目錄</h2>
+                <h2>商品目錄</h2>
                 <p>The .table-bordered class adds borders to a table:</p>
             </div>
-            <div class=col-md-3 style='background-color: #262626'>
+            {{foreach $product_list as $product_item}}
+                <div class=col-md-3 style='background-color: #262626'>
+                <div class=col-md-12 ><b class='item_title'>{{$product_item['name']}}</b></div>
+                <img src="../img/{{$product_item['image']}}" alt="">
+                <div class=col-md-12 ><b class='item_price'>價格:NT{{$product_item['price']}}</b></div>
+                <div class=col-md-12 ><b class='item_created_date'>上架日期:{{$product_item['updated_at']}}</b></div>
+                <div class=col-md-12 ><b class='item_saled'>已售出:{{$product_item['saled']}}套</b></div>
+                <div class=col-md-12 >
+                    <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
+                    <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
+                </div>
+            </div>
+            {{/foreach}}
+            
+            <!-- <div class=col-md-3 style='background-color: #262626'>
                 <div class=col-md-12 ><b class='item_title'>玩具總動員</b></div>
                 <img src="../img/img1.jpg" alt="">
                 <div class=col-md-12 ><b class='item_price'>價格:NT500</b></div>
@@ -132,18 +146,7 @@
                     <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
                     <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
                 </div>
-            </div>
-            <div class=col-md-3 style='background-color: #262626'>
-                <div class=col-md-12 ><b class='item_title'>玩具總動員</b></div>
-                <img src="../img/img1.jpg" alt="">
-                <div class=col-md-12 ><b class='item_price'>價格:NT500</b></div>
-                <div class=col-md-12 ><b class='item_created_date'>上架日期:2019-07-01</b></div>
-                <div class=col-md-12 ><b class='item_saled'>已售出:500套</b></div>
-                <div class=col-md-12 >
-                    <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
-                    <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
-                </div>
-            </div>
+            </div> -->
             
             
         </div>

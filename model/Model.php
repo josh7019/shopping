@@ -41,6 +41,29 @@
         }
 
         /*
+         * 取得全部資料
+         */
+        public function selectLastOne($table, $select_list, $order_by_colum){
+            $select_string = '';
+            foreach ($select_list as $select_single) {
+                $select_string .= $select_single.',';
+            }
+
+            $select_string = substr($select_string, 0, strlen($select_string)-1);
+            $sql = "select {$select_string} from {$table} order by {$order_by_colum} desc limit 1";
+            $pre = $this->mysqli->prepare($sql);
+            $pre->execute();
+            $result = $pre->get_result();
+            $resultItem = [];
+                $row = $result->fetch_assoc();
+                    foreach ($row as $key => $value) {
+                        $resultItem[$key] = $value;
+                    }
+                    $resultItem;
+            return $resultItem;
+        }
+
+        /*
          * 使用where取得多筆資料
          */
         public function selectAllWithWhere($table, $select_list, $where_colum_list, $where_value_list, $type_string)

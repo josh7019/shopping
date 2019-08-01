@@ -7,8 +7,8 @@
     } else {
         $action = 'index';
     }
-    
-    new PageController($action);
+    $test='PageController';
+    new $test($action);
     
     class PageController
     {
@@ -30,7 +30,10 @@
         {
             $is_login = (checkToken()) ? false : true;
             $user_item = getToken();
+            $product = new Product;
+            $product_list = $product->getAllProductOnSale();
             $smarty = new Smarty;
+            $smarty->assign('product_list', $product_list);
             $smarty->assign('permission', $user_item['permission']);
             $smarty->assign('is_login', $is_login);
             $smarty->display('../views/index.html');

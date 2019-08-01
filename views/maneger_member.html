@@ -116,7 +116,33 @@
                         </tr>
                     </thead>
                     <tbody id='messageArea'>
+                        {{foreach $user_list as $user_item}}
                         <tr class="item-color-1">
+                            <td>{{$user_item['user_id']}}</td>
+                            <td>{{$user_item['account']}}</td>
+                            <td>{{$user_item['name']}}</td>
+                            <td>正常</td>
+                            <td>{{$user_item['cash']}}</td>
+                            <td>{{$user_item['created_at']}}</td>
+                            <td>1000</td>
+                            <td>
+                                <span class="pull-right">
+                                    <span class="btn btn-warning">
+                                        <span class="glyphicon glyphicon-pencil">
+                                        </span>
+                                        編輯
+                                    </span>
+                                    <span class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove">
+                                        </span>
+                                        刪除
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        {{/foreach}}
+
+                        <!-- <tr class="item-color-2">
                             <td>0</td>
                             <td>test</td>
                             <td>josh</td>
@@ -138,30 +164,7 @@
                                     </span>
                                 </span>
                             </td>
-                        </tr>
-                        <tr class="item-color-2">
-                            <td>0</td>
-                            <td>test</td>
-                            <td>josh</td>
-                            <td>正常</td>
-                            <td>50</td>
-                            <td>2019-07-29</td>
-                            <td>1000</td>
-                            <td>
-                                <span class="pull-right">
-                                    <span class="btn btn-warning">
-                                        <span class="glyphicon glyphicon-pencil">
-                                        </span>
-                                        編輯
-                                    </span>
-                                    <span class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove">
-                                        </span>
-                                        刪除
-                                    </span>
-                                </span>
-                            </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table><!-- 留言顯示區結束 -->
             </div>

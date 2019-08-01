@@ -14,8 +14,12 @@
     {
         public function __construct($action)
         {
-            $this->$action();
-            // parent::__construct();
+            if (method_exists($this, $action)) {
+                $this->$action();
+            } else {
+                $action = 'getOut';
+                $this->$action();
+            }
         }
         
         /*
@@ -27,7 +31,7 @@
             $user = new User();
             $user_account = $user->getAccount($account);
             echo json_encode($user_account);
-
+            exit();
         }
 
         /*
@@ -64,6 +68,7 @@
                 ];
             }
             echo json_encode($data);
+            exit();
         }
 
         /*
@@ -81,6 +86,7 @@
                     'alert' => '格式錯誤',
                 ];
                 echo json_encode($data);
+                exit();
             }
             
             $user = new User;
@@ -96,11 +102,13 @@
                         'location' => 'PageController.php?action=index',
                     ];
                     echo json_encode($data);
+                    exit();
                 } else {
                     $data=[
                         'alert' => '密碼錯誤',
                     ];
                     echo json_encode($data);
+                    exit();
                 }
             }
         }
@@ -116,5 +124,6 @@
                 'location' => 'PageController.php?action=index',
             ];
             echo json_encode($data);
+            exit();
         }
     }

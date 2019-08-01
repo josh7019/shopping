@@ -2,8 +2,8 @@
     require_once('../smarty/smarty_init.php');
     require_once('../model/all.php');
     
-    if (isset($_REQUEST['action'])) {
-        $action = $_REQUEST['action'];
+    if (isset($_GET['action'])) {
+        $action = $_GET['action'];
     } else {
         $action = 'index';
     }
@@ -37,7 +37,10 @@
         {
             $is_login = (checkToken()) ? false : true;
             $user_item = getToken();
+            $user = new User;
+            $user_list = $user->getAllUser();
             $smarty = new Smarty;
+            $smarty->assign('user_list', $user_list);
             $smarty->assign('permission', $user_item['permission']);
             $smarty->assign('is_login', $is_login);
             $smarty->display('../views/maneger_member.html');
@@ -50,10 +53,26 @@
         {
             $is_login = (checkToken()) ? false : true;
             $user_item = getToken();
+            $product = new Product;
+            $product_list = $product->getAllProduct();
             $smarty = new Smarty;
+            $smarty->assign('product_list', $product_list);
             $smarty->assign('permission', $user_item['permission']);
             $smarty->assign('is_login', $is_login);
             $smarty->display('../views/manager_product.html');
         }
         
+
+        /*
+         * 新增產品頁面
+         */
+        public function addProduct()
+        {
+            $is_login = (checkToken()) ? false : true;
+            $user_item = getToken();
+            $smarty = new Smarty;
+            $smarty->assign('permission', $user_item['permission']);
+            $smarty->assign('is_login', $is_login);
+            $smarty->display('../views/manager_add_product.html');
+        }
     }

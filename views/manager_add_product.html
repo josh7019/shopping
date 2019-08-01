@@ -1,41 +1,42 @@
-
 <!DOCTYPE html>
-<html lang="zh-tw">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" 
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script type="text/javascript" src=''></script>
+        <script type="text/javascript" src='../scripts/functions.js'></script>
+        <script type="text/javascript" src='../scripts/manager_add_product.js'></script>
+        
         <title>Document</title>
         <style>
-            .table-striped>thead>tr{
-                background-color: #ea6153;
-                
-                border-top-left-radius: 50px;
-                color: white;
-                }
+            .myform{
+                margin-top:20%;
+                width:50%;
+                margin-left:25%;
+                text-align:center;
+                border-radius: 20px;
+            }
             body {
             font-family: arial,"Microsoft JhengHei","微軟正黑體",sans-serif !important;
-            color:#a6a6a6;
             background-color:#1c1c1c; 
             }
-            th {
-            text-align: center;
+            #title {
+                color:red;
             }
-            tr {
-            text-align: center;
+            #add_product {
+                background-color: #262626
             }
-            .item-color-1 {
-                background-color:#f6f6f6;
+            .descript {
+                color:red;
             }
-            .item-color-2 {
-                background-color:#e9e9e9;
-            }
+            
         </style>
     </head>
     <body>
+        
         <!-- 導覽列 -->
         <nav class="navbar navbar-inverse">
             <div class="container-fluid">
@@ -88,76 +89,79 @@
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
+        
+        <div class='container'>        
+            <form id='add_product' class="form-horizontal myform">
+            <fieldset>
 
-
-        <div class='container'>
-            <div id="nowTime"></div>
-            <div>
-                <!-- 留言新增表格 -->
-                <div id='addTodoList'>
-                    <form id='add_message_form' class="form-horizontal">
-                        <fieldset>
-                        <!-- Form Name -->
-                            <legend style="color:red;">商品管理</legend>
-                        </fieldset>
-                        <span class=pull-right><a href="managerpagecontroller.php?action=addproduct" class="btn btn-success">新增產品</a></span>
-                    </form>
-                </div><!-- 留言新增表格結束 -->
-
-                <!-- 留言顯示區 -->
-                <table class="table table-striped" id='showTodoList'>
-                    <thead>
-                        <tr>
-                            <th>商品編號</th>
-                            <th>名稱</th>
-                            <th>商品狀態</th>
-                            <th>商品創建時間</th>
-                            <th>總銷售量</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id='messageArea'>
-                        {{foreach $product_list as $product_item}}
-                        <tr class="item-color-1">
-                            <td>{{$product_item['product_id']}}</td>
-                            <td>{{$product_item['name']}}</td>
-                            {{if $product_item['status'] == 0}}
-                            <td>待上架</td>
-                            {{elseif $product_item['status'] == 1}}
-                            <td>售賣中</td>
-                            {{elseif $product_item['status'] == 2}}
-                            <td>已下架</td>
-                            {{/if}}
-                            <td>{{$product_item['updated_at']}}</td>
-                            <td>{{$product_item['saled']}}</td>
-                            <td>
-                                <span class="pull-right">
-                                    <span class="btn btn-warning">
-                                        <span class="glyphicon glyphicon-pencil">
-                                        </span>
-                                        編輯
-                                    </span>
-                                    <span class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove">
-                                        </span>
-                                        刪除
-                                    </span>
-                                </span>
-                            </td>
-                        </tr>
-                        {{/foreach}}
-                    </tbody>
-                </table><!-- 留言顯示區結束 -->
+            <!-- Form Name -->
+            <legend class='descript'>新增產品</legend>
+            
+            <!-- 名稱輸入 -->
+            <div class="form-group">
+                <label class="col-md-4 control-label descript"  for="name">產品名稱</label><span class='descript' id='name_signal'></span>
+                <div class="col-md-4">
+                    <input id="name" autocomplete='off' name="name" type="text" placeholder="請輸入產品名稱" class="form-control input-md" required="">    
+                    <span class="help-block"></span> 
+                </div>
             </div>
+
+            <!-- 價格輸入-->
+            <div class="form-group">
+                <label class="col-md-4 control-label descript" for="price">價格</label><span class='descript' id='price_signal'></span>  
+                <div class="col-md-4">
+                    <input id="price" name="price" type="number" min="1" placeholder="請輸入價格" class="form-control input-md" required="">
+                    <span class="help-block"></span> 
+                </div>
+            </div>
+
+            <!-- 商品狀態選擇-->
+            <div class="form-group descript">
+                <label class="col-md-4 control-label" for="status">商品狀態</label><span id='status_signal'></span>
+                <div class="col-md-4">
+                    <select name="status" id="status">
+                        <option value="0" selected>待上架</option>
+                        <option value="1">售賣中</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- 產品描述輸入-->
+            <div class="form-group">
+                    <label class="col-md-4 control-label descript" for="descript">產品描述</label><span class='descript' id='descript_signal'></span>
+                    <div class="col-md-4">
+                        <textarea name="descript" id="descript" cols="30" rows="5"></textarea>
+                    </div>
+            </div>
+            
+            <!-- 上傳圖片 -->
+            <div class="form-group descript">
+                <label class="col-md-4 control-label" for="image">上傳圖片</label>
+                <div class="col-md-4">
+                    <input type="file" name='image'>
+                </div>
+            </div>
+
+            <!-- 送出按鈕 -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="login"></label>
+                <div class="col-md-4">
+                    <button type='button' id="add_button" name="add_button" class="btn btn-success">確定新增</button>
+                </div>
+            </div>
+
+            <input type="hidden" name='action' value='addProduct'>
+            
+            </fieldset>
+            </form>
         </div>
-        <input type="hidden" id='message' value='{{$message}}'>
         
         
-        <script type="text/javascript" src=''></script>
         <script 
         src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" 
         integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" 
         crossorigin="anonymous">
         </script>
+        <!-- 清除message -->
     </body>
 </html>

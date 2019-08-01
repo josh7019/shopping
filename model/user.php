@@ -39,4 +39,13 @@
             );
             return $user_item;
         }
+
+        public function getAllUser()
+        {
+            $user_list = $this->selectAll(
+                $this->table,
+                ['user_id', 'account', 'id_number', 'name', 'cash', 'permission', 'created_at', 'updated_at']
+            );
+            return $user_list;
+        }
     }

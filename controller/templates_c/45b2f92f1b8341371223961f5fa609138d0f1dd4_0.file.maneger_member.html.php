@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 16:59:38
+/* Smarty version 3.1.33, created on 2019-08-01 18:44:38
   from 'C:\xampp\htdocs\shopping\views\maneger_member.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d41587a00d713_60813924',
+  'unifunc' => 'content_5d42c29627bd01_36951356',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '45b2f92f1b8341371223961f5fa609138d0f1dd4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\maneger_member.html',
-      1 => 1564563575,
+      1 => 1564656272,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d41587a00d713_60813924 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d42c29627bd01_36951356 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -143,7 +143,7 @@ echo $_prefixVariable5;?>
                     <form id='add_message_form' class="form-horizontal" method='POST' action='../cont/addmessage.php'>
                         <fieldset>
                         <!-- Form Name -->
-                            <legend style="color: red">會員管理</legend>
+                            <legend style="color: red;">會員管理</legend>
                         </fieldset>
                     </form>
                 </div><!-- 留言新增表格結束 -->
@@ -163,7 +163,65 @@ echo $_prefixVariable5;?>
                         </tr>
                     </thead>
                     <tbody id='messageArea'>
+                        <?php ob_start();
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['user_list']->value, 'user_item');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['user_item']->value) {
+$_prefixVariable6 = ob_get_clean();
+echo $_prefixVariable6;?>
+
                         <tr class="item-color-1">
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['user_item']->value['user_id'];
+$_prefixVariable7 = ob_get_clean();
+echo $_prefixVariable7;?>
+</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['user_item']->value['account'];
+$_prefixVariable8 = ob_get_clean();
+echo $_prefixVariable8;?>
+</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['user_item']->value['name'];
+$_prefixVariable9 = ob_get_clean();
+echo $_prefixVariable9;?>
+</td>
+                            <td>正常</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['user_item']->value['cash'];
+$_prefixVariable10 = ob_get_clean();
+echo $_prefixVariable10;?>
+</td>
+                            <td><?php ob_start();
+echo $_smarty_tpl->tpl_vars['user_item']->value['created_at'];
+$_prefixVariable11 = ob_get_clean();
+echo $_prefixVariable11;?>
+</td>
+                            <td>1000</td>
+                            <td>
+                                <span class="pull-right">
+                                    <span class="btn btn-warning">
+                                        <span class="glyphicon glyphicon-pencil">
+                                        </span>
+                                        編輯
+                                    </span>
+                                    <span class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-remove">
+                                        </span>
+                                        刪除
+                                    </span>
+                                </span>
+                            </td>
+                        </tr>
+                        <?php ob_start();
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+$_prefixVariable12 = ob_get_clean();
+echo $_prefixVariable12;?>
+
+
+                        <!-- <tr class="item-color-2">
                             <td>0</td>
                             <td>test</td>
                             <td>josh</td>
@@ -185,38 +243,15 @@ echo $_prefixVariable5;?>
                                     </span>
                                 </span>
                             </td>
-                        </tr>
-                        <tr class="item-color-2">
-                            <td>0</td>
-                            <td>test</td>
-                            <td>josh</td>
-                            <td>正常</td>
-                            <td>50</td>
-                            <td>2019-07-29</td>
-                            <td>1000</td>
-                            <td>
-                                <span class="pull-right">
-                                    <span class="btn btn-warning">
-                                        <span class="glyphicon glyphicon-pencil">
-                                        </span>
-                                        編輯
-                                    </span>
-                                    <span class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove">
-                                        </span>
-                                        刪除
-                                    </span>
-                                </span>
-                            </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table><!-- 留言顯示區結束 -->
             </div>
         </div>
         <input type="hidden" id='message' value='<?php ob_start();
 echo $_smarty_tpl->tpl_vars['message']->value;
-$_prefixVariable6 = ob_get_clean();
-echo $_prefixVariable6;?>
+$_prefixVariable13 = ob_get_clean();
+echo $_prefixVariable13;?>
 '>
         
         
