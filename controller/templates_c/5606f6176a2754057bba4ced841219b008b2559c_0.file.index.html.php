@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 18:25:16
+/* Smarty version 3.1.33, created on 2019-08-02 10:42:02
   from 'C:\xampp\htdocs\shopping\views\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42be0c74a555_71447064',
+  'unifunc' => 'content_5d43a2fa73f8a1_67093293',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5606f6176a2754057bba4ced841219b008b2559c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\index.html',
-      1 => 1564655115,
+      1 => 1564713174,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42be0c74a555_71447064 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d43a2fa73f8a1_67093293 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +63,7 @@ function content_5d42be0c74a555_71447064 (Smarty_Internal_Template $_smarty_tpl)
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
             
-            <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
+            <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -122,6 +122,7 @@ echo $_prefixVariable5;?>
                         </div>
                         <button type="button" class="btn btn-default">搜尋商品</button>
                 </form>
+                <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
                 <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                 <li class="dropdown">
                 </li>
@@ -152,7 +153,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['product_item']->value) {
 $_prefixVariable6 = ob_get_clean();
 echo $_prefixVariable6;?>
 
-                <div class=col-md-3 style='background-color: #262626'>
+            <div class=col-md-3 style='background-color: #262626'>
                 <div class=col-md-12 ><b class='item_title'><?php ob_start();
 echo $_smarty_tpl->tpl_vars['product_item']->value['name'];
 $_prefixVariable7 = ob_get_clean();
@@ -190,44 +191,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 $_prefixVariable12 = ob_get_clean();
 echo $_prefixVariable12;?>
 
-            
-            <!-- <div class=col-md-3 style='background-color: #262626'>
-                <div class=col-md-12 ><b class='item_title'>玩具總動員</b></div>
-                <img src="../img/img1.jpg" alt="">
-                <div class=col-md-12 ><b class='item_price'>價格:NT500</b></div>
-                <div class=col-md-12 ><b class='item_created_date'>上架日期:2019-07-01</b></div>
-                <div class=col-md-12 ><b class='item_saled'>已售出:500套</b></div>
-                <div class=col-md-12 >
-                    <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
-                    <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
-                </div>
-            </div>
-            <div class=col-md-3 style='background-color: #262626'>
-                <div class=col-md-12 ><b class='item_title'>玩具總動員</b></div>
-                <img src="../img/img1.jpg" alt="">
-                <div class=col-md-12 ><b class='item_price'>價格:NT500</b></div>
-                <div class=col-md-12 ><b class='item_created_date'>上架日期:2019-07-01</b></div>
-                <div class=col-md-12 ><b class='item_saled'>已售出:500套</b></div>
-                <div class=col-md-12 >
-                    <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
-                    <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
-                </div>
-            </div>
-            <div class=col-md-3 style='background-color: #262626'>
-                <div class=col-md-12 ><b class='item_title'>玩具總動員</b></div>
-                <img src="../img/img1.jpg" alt="">
-                <div class=col-md-12 ><b class='item_price'>價格:NT500</b></div>
-                <div class=col-md-12 ><b class='item_created_date'>上架日期:2019-07-01</b></div>
-                <div class=col-md-12 ><b class='item_saled'>已售出:500套</b></div>
-                <div class=col-md-12 >
-                    <span class='btn btn-warning'><span class="glyphicon glyphicon-eye-open"></span> 商品資訊</span>
-                    <span class='btn btn-info'><span class="glyphicon glyphicon-shopping-cart"></span> 加入購物車</span>
-                </div>
-            </div> -->
-            
-            
         </div>
-        <div></div>
     </div>
 
     <?php echo '<script'; ?>

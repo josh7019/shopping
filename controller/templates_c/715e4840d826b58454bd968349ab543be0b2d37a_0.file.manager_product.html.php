@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 18:21:30
+/* Smarty version 3.1.33, created on 2019-08-02 10:21:58
   from 'C:\xampp\htdocs\shopping\views\manager_product.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d42bd2aa14668_44704001',
+  'unifunc' => 'content_5d439e46108837_52576818',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '715e4840d826b58454bd968349ab543be0b2d37a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\manager_product.html',
-      1 => 1564654889,
+      1 => 1564712340,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d42bd2aa14668_44704001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d439e46108837_52576818 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="zh-tw">
@@ -33,7 +33,7 @@ function content_5d42bd2aa14668_44704001 (Smarty_Internal_Template $_smarty_tpl)
  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src=''><?php echo '</script'; ?>
+ type="text/javascript" src='../scripts/manager_product.js'><?php echo '</script'; ?>
 >
         <title>Document</title>
         <style>
@@ -69,7 +69,7 @@ function content_5d42bd2aa14668_44704001 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
+                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -123,14 +123,14 @@ echo $_prefixVariable5;?>
                 
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left">
-                            <div class="form-group">
+                        <div class="form-group">
                             <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="button" class="btn btn-default">搜尋商品</button>
+                        </div>
+                        <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
+                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
                     <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
-                    <li class="dropdown">
-                    </li>
+                    <li class="dropdown"></li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -140,18 +140,17 @@ echo $_prefixVariable5;?>
         <div class='container'>
             <div id="nowTime"></div>
             <div>
-                <!-- 留言新增表格 -->
+                <!-- 抬頭 -->
                 <div id='addTodoList'>
                     <form id='add_message_form' class="form-horizontal">
                         <fieldset>
-                        <!-- Form Name -->
                             <legend style="color:red;">商品管理</legend>
                         </fieldset>
                         <span class=pull-right><a href="managerpagecontroller.php?action=addproduct" class="btn btn-success">新增產品</a></span>
                     </form>
-                </div><!-- 留言新增表格結束 -->
+                </div>
 
-                <!-- 留言顯示區 -->
+                <!-- 商品顯示區 -->
                 <table class="table table-striped" id='showTodoList'>
                     <thead>
                         <tr>
@@ -217,13 +216,12 @@ echo $_prefixVariable14;?>
 </td>
                             <td>
                                 <span class="pull-right">
-                                    <span class="btn btn-warning">
+                                    <a href='' class="btn btn-warning">
                                         <span class="glyphicon glyphicon-pencil">
-                                        </span>
-                                        編輯
-                                    </span>
-                                    <span class="btn btn-danger">
-                                        <span class="glyphicon glyphicon-remove">
+                                        </span> 編輯
+                                    </a>
+                                    <span class="btn btn-danger delete_button">
+                                        <span class="glyphicon glyphicon-remove ">
                                         </span>
                                         刪除
                                     </span>

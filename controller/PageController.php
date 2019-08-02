@@ -80,3 +80,4 @@
             $smarty->display('../views/logout.html');
         }
     }
+    

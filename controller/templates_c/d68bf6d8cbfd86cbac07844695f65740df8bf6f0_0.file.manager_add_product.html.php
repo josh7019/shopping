@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-01 09:03:40
+/* Smarty version 3.1.33, created on 2019-08-02 09:12:52
   from 'C:\xampp\htdocs\shopping\views\manager_add_product.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d428ecc1b3279_45753566',
+  'unifunc' => 'content_5d438e14676185_20098867',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd68bf6d8cbfd86cbac07844695f65740df8bf6f0' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\manager_add_product.html',
-      1 => 1564643019,
+      1 => 1564708186,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d428ecc1b3279_45753566 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d438e14676185_20098867 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -72,7 +72,7 @@ function content_5d428ecc1b3279_45753566 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
+                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -131,6 +131,7 @@ echo $_prefixVariable5;?>
                             </div>
                             <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
+                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
                     <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                     <li class="dropdown">
                     </li>

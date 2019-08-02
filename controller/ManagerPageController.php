@@ -76,3 +76,4 @@
             $smarty->display('../views/manager_add_product.html');
         }
     }
+    

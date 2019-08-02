@@ -51,7 +51,16 @@
          */
         public function getAllProduct()
         {
-            $product_list = $this->selectAll($this->table, ['*']);
+            $product_list = $this->selectAllWithWhere($this->table, ['*'], ['is_delete'], [0], 'i');
             return $product_list;
+        }
+
+        /*
+         * 軟刪除一項產品
+         */
+        public function deleteOne($product_id)
+        {
+            $is_success = $this->update($this->table, ['is_delete'], [1], ['product_id'], [$product_id], 'ii');
+            return $is_success;
         }
     }

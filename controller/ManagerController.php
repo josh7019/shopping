@@ -56,6 +56,9 @@
             }
         }
 
+        /*
+         * 新增產品
+         */
         public function addProduct()
         {
             
@@ -72,6 +75,30 @@
             $product_item = $product->getNewProductId();
             uploadImage($product_item);
             echo json_encode($data);
-
+        }
+        
+        /*
+         * 刪除產品
+         */
+        public function deleteProduct()
+        {
+            $product_id = $_POST['product_id'];
+            $product = new Product;
+            $is_success = $product->deleteOne($product_id);
+            if ($is_success) {
+                $data = [
+                    'alert' => '刪除成功',
+                    'is_success' => true
+                ];
+                echo json_encode($data);
+                exit();
+            } else {
+                $data = [
+                    'alert' => '刪除失敗',
+                    'is_success' => false
+                ];
+                echo json_encode($data);
+                exit();
+            }
         }
     }

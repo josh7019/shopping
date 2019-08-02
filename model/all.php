@@ -1,6 +1,6 @@
 <?php
     require_once('User.php');
-    require_once('../model/manager.php');
+    require_once('/shopping/model/manager.php');
     require_once('../tools/CheckTool.php');
     require_once('../model/Product.php');
     /*
@@ -71,6 +71,8 @@
                             'alert' => '新增產品及圖片成功',
                             'location' => '../controller/managerpagecontroller.php?action=product'
                         ];
+                        echo json_encode($data);
+                        exit();
                     } else {
                         $is_upload=move_uploaded_file($files["tmp_name"], $filepath);//存放檔案
                         $product->updateImage($product_item['product_id'], $filename);
@@ -78,6 +80,8 @@
                             'alert' => '修改圖片成功',
                             'location' => '../controller/managerpagecontroller.php?action=product'
                         ];
+                        echo json_encode($data);
+                        exit();
                     }
                 }    
             }

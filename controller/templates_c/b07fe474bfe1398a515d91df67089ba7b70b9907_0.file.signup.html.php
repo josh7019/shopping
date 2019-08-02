@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 08:48:12
+/* Smarty version 3.1.33, created on 2019-08-02 03:08:27
   from 'C:\xampp\htdocs\shopping\views\signup.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d4139ac46c182_35883762',
+  'unifunc' => 'content_5d438d0b194b63_52203347',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b07fe474bfe1398a515d91df67089ba7b70b9907' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\signup.html',
-      1 => 1564555691,
+      1 => 1564708102,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d4139ac46c182_35883762 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d438d0b194b63_52203347 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -66,7 +66,7 @@ function content_5d4139ac46c182_35883762 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
+                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-07-31 14:25:35
+/* Smarty version 3.1.33, created on 2019-08-02 03:12:33
   from 'C:\xampp\htdocs\shopping\views\shopping_car.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d41345fb5f600_81335916',
+  'unifunc' => 'content_5d438e0102c738_33512789',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '98e6d6ef45b21254faf8fc54deb7ed7fbea8726f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\shopping_car.html',
-      1 => 1564554333,
+      1 => 1564708335,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d41345fb5f600_81335916 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d438e0102c738_33512789 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +72,7 @@ function content_5d41345fb5f600_81335916 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">Brand</a>
+                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
@@ -112,14 +112,14 @@ echo $_prefixVariable3;?>
                 
                 <ul class="nav navbar-nav navbar-right">
                     <form class="navbar-form navbar-left">
-                            <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search">
-                            </div>
-                            <button type="button" class="btn btn-default">搜尋商品</button>
+                        <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
                     <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
-                    <li class="dropdown">
-                    </li>
+                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
+                    <li class="dropdown"></li>
                 </ul>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
@@ -130,7 +130,6 @@ echo $_prefixVariable3;?>
             <div id="nowTime"></div>
             <div>
                     <legend>購物車</legend>
-                
                 <!-- 留言顯示區 -->
                 <table class="table table-striped" id='title'>
                     <thead>
