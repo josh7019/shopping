@@ -41,7 +41,8 @@
                 echo 'POST';
             }
             elseif ($_SERVER['REQUEST_METHOD'] == 'PUT') {
-                echo 'PUT';
+                parse_str(file_get_contents('php://input'), $_PUT);
+                echo json_encode($_PUT);
             }
             elseif ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
                 echo 'DELETE';

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-02 03:08:27
+/* Smarty version 3.1.33, created on 2019-08-02 11:48:26
   from 'C:\xampp\htdocs\shopping\views\signup.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d438d0b194b63_52203347',
+  'unifunc' => 'content_5d4406ea0a2935_96161436',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b07fe474bfe1398a515d91df67089ba7b70b9907' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\signup.html',
-      1 => 1564708102,
+      1 => 1564736265,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d438d0b194b63_52203347 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d4406ea0a2935_96161436 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -33,7 +33,7 @@ function content_5d438d0b194b63_52203347 (Smarty_Internal_Template $_smarty_tpl)
  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src='../scripts/functions.js'><?php echo '</script'; ?>
+ type="text/javascript" src='/shopping/scripts/functions.js'><?php echo '</script'; ?>
 >
         
         <title>Document</title>
@@ -66,14 +66,14 @@ function content_5d438d0b194b63_52203347 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
+                <a class="navbar-brand" href="/shopping/controller/PageController.php/index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <li class=""><a href="/shopping/controller/PageController.php/login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/shopping/controller/PageController.php/signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -162,7 +162,7 @@ echo $_prefixVariable1;?>
 '>
         
         <?php echo '<script'; ?>
- type="text/javascript" src='../scripts/signup.js'><?php echo '</script'; ?>
+ type="text/javascript" src='/shopping/scripts/signup.js'><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
  

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-02 03:11:06
+/* Smarty version 3.1.33, created on 2019-08-02 10:58:44
   from 'C:\xampp\htdocs\shopping\views\login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d438daac6fb13_81561542',
+  'unifunc' => 'content_5d43fb443956d2_24838850',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5357c5c0575fa1759eb5742d137a1e2baa296255' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\login.html',
-      1 => 1564708172,
+      1 => 1564736277,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d438daac6fb13_81561542 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d43fb443956d2_24838850 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +34,10 @@ function content_5d438daac6fb13_81561542 (Smarty_Internal_Template $_smarty_tpl)
  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src='../scripts/functions.js'><?php echo '</script'; ?>
+ type="text/javascript" src='/shopping/scripts/functions.js'><?php echo '</script'; ?>
 >
         <?php echo '<script'; ?>
- type="text/javascript" src='../scripts/login.js'><?php echo '</script'; ?>
+ type="text/javascript" src='/shopping/scripts/login.js'><?php echo '</script'; ?>
 >
         <title>Document</title>
         <style>
@@ -75,14 +75,14 @@ function content_5d438daac6fb13_81561542 (Smarty_Internal_Template $_smarty_tpl)
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 
-                <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
+                <a class="navbar-brand" href="/shopping/controller/PageController.php/index">商城首頁</a>
                 </div>
             
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
-                    <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                    <li class=""><a href="/shopping/controller/PageController.php/login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="/shopping/controller/PageController.php/signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -104,7 +104,7 @@ function content_5d438daac6fb13_81561542 (Smarty_Internal_Template $_smarty_tpl)
                             </div>
                             <button type="button" class="btn btn-default">搜尋商品</button>
                     </form>
-                    <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
+                    <li><a href="/shopping/controller/PageController.php/shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
                     <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                     <li class="dropdown">
                     </li>
@@ -142,7 +142,7 @@ function content_5d438daac6fb13_81561542 (Smarty_Internal_Template $_smarty_tpl)
                 <label class="col-md-4 control-label" for="signin"></label>
                 <div class="col-md-4">
                     <button id='login_button' type='button' id="signin" name="signin" class="btn btn-info">登入</button>
-                    <a href="../controller/PageController.php?action=signup" class='btn btn-success'>註冊</a>
+                    <a href="/shopping/controller/PageController.php/signup" class='btn btn-success'>註冊</a>
                 </div>
             </div>
             </fieldset>

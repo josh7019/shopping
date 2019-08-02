@@ -44,7 +44,7 @@ function login()
     }
     $.ajax({
         type : 'post',
-        url : '../controller/UserController.php',
+        url : '/shopping/controller/UserController.php/login',
         data : data,
         success : function (result_array) {
             console.log(result_array);

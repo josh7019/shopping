@@ -1,19 +1,21 @@
 <?php
-    require_once('../smarty/smarty_init.php');
-    require_once('../model/all.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\shopping\smarty\smarty_init.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\shopping\model\all.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\shopping\controller\controller.php');
     
-    if (isset($_GET['action'])) {
-        $action = $_GET['action'];
-    } else {
-        $action = 'index';
-    }
+    $url_list = explode('/',$_SERVER['REQUEST_URI']);
+    $action = (isset($url_list[4])) ? $url_list[4] : '';
+    $id = (isset($url_list[5])) ? $url_list[5] : '';
+    
     $test='PageController';
-    new $test($action);
+    new $test($action, $id);
     
     class PageController
     {
-        public function __construct($action)
+        private $id;
+        public function __construct($action, $id)
         {
+            $this->id = $id;
             if (method_exists($this, $action)) {
                 $this->$action();
             } else {

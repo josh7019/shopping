@@ -1,25 +1,20 @@
 <?php
-    require_once('../model/User.php');
-    require_once('../tools/CheckTool.php');
-    require_once('../model/all.php');
-
-    if (isset($_POST['action'])) {
-        $action = $_POST['action'];
-    } else {
-        $action = 'login';
-    }
-    new UserController($action);
-
-    class UserController
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\shopping\model\all.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\controller\controller.php');
+    
+    class UserController extends Controller
     {
-        public function __construct($action)
+        private $id;
+        public function __construct($action, $id)
         {
+            $this->id = $id;
             if (method_exists($this, $action)) {
                 $this->$action();
             } else {
-                $action = 'getOut';
+                $action = 'getout';
                 $this->$action();
             }
+            // parent::__construct();
         }
         
         /*
@@ -74,7 +69,7 @@
         /*
          * 登入
          */
-        public function login()
+        public function post_login()
         {
             $account = $_POST['account'];
             $password = $_POST['password'];
@@ -96,10 +91,10 @@
                 if (password_verify($password, $user_item['password'])) {
                     $token = produceToken();
                     $user->addToken($account, $token);
-                    setcookie('token', $token, time()+3600);
+                    setcookie('token', $token, time()+3600 ,'/');
                     $data=[
                         'alert' => '登入成功',
-                        'location' => 'PageController.php?action=index',
+                        'location' => '/shopping/controller/PageController.php/index',
                     ];
                     echo json_encode($data);
                     exit();
@@ -118,12 +113,18 @@
          */
         public function logout()
         {
-            setcookie ("token", "test", time()-100);
+            setcookie ("token", "test", time()-100, '/');
             $data=[
                 'alert' => '登出成功',
-                'location' => 'PageController.php?action=index',
+                'location' => '/shopping/controller/PageController.php/index',
             ];
             echo json_encode($data);
             exit();
         }
     }
+
+    $url_list = explode('/',$_SERVER['REQUEST_URI']);
+    $action = (isset($url_list[4])) ? $url_list[4] : '';
+    $id = (isset($url_list[5])) ? $url_list[5] : '';
+
+    new UserController($action, $id);

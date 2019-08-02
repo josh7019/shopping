@@ -38,21 +38,21 @@
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
             
-            <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
+            <a class="navbar-brand" href="/shopping/controller/PageController.php/index">商城首頁</a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 {{if $is_login}}
-                <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
-                <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                <li class=""><a href="/shopping/controller/PageController.php/login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
+                <li><a href="/shopping/controller/PageController.php/signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
                 {{else}}
-                <li><a href="PageController.php?action=logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
+                <li><a href="/shopping/controller/PageController.php/logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
                 {{/if}}
                 {{if $permission == 5}}
-                <li class=""><a href="ManagerPageController.php?action=member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
-                <li><a href="managerPageController.php?action=product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
+                <li class=""><a href="/shopping/controller/ManagerPageController.php/member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
+                <li><a href="/shopping/controller/managerPageController.php/product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
                 {{/if}}
                 
                 
@@ -77,8 +77,8 @@
                         </div>
                         <button type="button" class="btn btn-default">搜尋商品</button>
                 </form>
-                <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
-                <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+                <li><a href="/shopping/controller/PageController.php/shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
+                <li><a href="/shopping/controller/PageController.php/shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                 <li class="dropdown">
                 </li>
             </ul>
@@ -90,7 +90,7 @@
             <div class="col-md-1">
             </div>
             <div class="col-md-10">
-                <img src="../img/bg1.jpg" style="width:100%;height:500px;">
+                <img src="/shopping/img/bg1.jpg" style="width:100%;height:500px;">
             </div>
         </div>
     </div>
@@ -104,7 +104,7 @@
             {{foreach $product_list as $product_item}}
             <div class=col-md-3 style='background-color: #262626'>
                 <div class=col-md-12 ><b class='item_title'>{{$product_item['name']}}</b></div>
-                <img src="../img/{{$product_item['image']}}" alt="">
+                <img src="/shopping/img/{{$product_item['image']}}" alt="">
                 <div class=col-md-12 ><b class='item_price'>價格:NT{{$product_item['price']}}</b></div>
                 <div class=col-md-12 ><b class='item_created_date'>上架日期:{{$product_item['updated_at']}}</b></div>
                 <div class=col-md-12 ><b class='item_saled'>已售出:{{$product_item['saled']}}套</b></div>

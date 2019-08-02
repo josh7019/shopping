@@ -1,19 +1,24 @@
 <?php
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\shopping\model\all.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '\controller\controller.php');
+    $url_list = explode('/',$_SERVER['REQUEST_URI']);
+    $action = (isset($url_list[4])) ? $url_list[4] : '';
+    $id = (isset($url_list[5])) ? $url_list[5] : '';
     
-    require_once('../model/all.php');
-
-    if (isset($_REQUEST['action'])) {
-        $action = $_REQUEST['action'];
-    } else {
-        $action = 'goIndex';
-    }
-    new ManagerController($action);
+    new ManagerController($action, $id);
 
     class ManagerController
     {
-        public function __construct($action)
+        private $id;
+        public function __construct($action, $id)
         {
-            $this->$action();
+            $this->id = $id;
+            if (method_exists($this, $action)) {
+                $this->$action();
+            } else {
+                $action = 'getout';
+                $this->$action();
+            }
             // parent::__construct();
         }
 

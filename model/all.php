@@ -1,8 +1,8 @@
 <?php
-    require_once('User.php');
-    require_once('/shopping/model/manager.php');
-    require_once('../tools/CheckTool.php');
-    require_once('../model/Product.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/shopping/model/User.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/shopping/model/manager.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/shopping/tools/CheckTool.php');
+    require_once($_SERVER['DOCUMENT_ROOT'] . '/shopping/model/Product.php');
     /*
      * 產生token
      */

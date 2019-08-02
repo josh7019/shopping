@@ -78,7 +78,7 @@ function submit(){
     // formData.append('img',$('#file')[0].files[0])
     // formData.append("code",$("#code").val())
     $.ajax({
-            url:'../Controller/ManagerController.php',
+            url:'/shopping/Controller/ManagerController.php/addProduct',
             type:'post',
             dataType:'text',
             cache: false,

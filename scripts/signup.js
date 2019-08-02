@@ -62,7 +62,7 @@ function checkAccountFormat(e){
         // ajax 到後端檢查帳號是否存在
         $.ajax({
             type:'post',
-            url:'../controller/UserController.php',
+            url:'/shopping/controller/UserController.php/checkAccount',
             data:{
                 account:e.target.value,
                 action:'checkAccount',
@@ -128,7 +128,7 @@ function submitSignup(){
     };
     $.ajax({
         type : 'post',
-        url : '../controller/UserController.php',
+        url : '/shopping/controller/UserController.php/signup',
         data : data,
         success : function (result_array) {
             // console.log(result_array);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.33, created on 2019-08-02 10:42:02
+/* Smarty version 3.1.33, created on 2019-08-02 16:58:49
   from 'C:\xampp\htdocs\shopping\views\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.33',
-  'unifunc' => 'content_5d43a2fa73f8a1_67093293',
+  'unifunc' => 'content_5d43fb49bcf3e9_32048917',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5606f6176a2754057bba4ced841219b008b2559c' => 
     array (
       0 => 'C:\\xampp\\htdocs\\shopping\\views\\index.html',
-      1 => 1564713174,
+      1 => 1564736269,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5d43a2fa73f8a1_67093293 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5d43fb49bcf3e9_32048917 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -63,7 +63,7 @@ function content_5d43a2fa73f8a1_67093293 (Smarty_Internal_Template $_smarty_tpl)
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
             
-            <a class="navbar-brand" href="PageController.php?action=index">商城首頁</a>
+            <a class="navbar-brand" href="/shopping/controller/PageController.php/index">商城首頁</a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -74,14 +74,14 @@ if ($_smarty_tpl->tpl_vars['is_login']->value) {
 $_prefixVariable1 = ob_get_clean();
 echo $_prefixVariable1;?>
 
-                <li class=""><a href="PageController.php?action=login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
-                <li><a href="PageController.php?action=signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
+                <li class=""><a href="/shopping/controller/PageController.php/login"><span class="glyphicon glyphicon-user"></span> 登入 <span class="sr-only">(current)</span></a></li>
+                <li><a href="/shopping/controller/PageController.php/signup"><span class="glyphicon glyphicon-tower"></span> 註冊</a></li>
                 <?php ob_start();
 } else {
 $_prefixVariable2 = ob_get_clean();
 echo $_prefixVariable2;?>
 
-                <li><a href="PageController.php?action=logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
+                <li><a href="/shopping/controller/PageController.php/logout"><span class="glyphicon glyphicon-tower"></span> 登出</a></li>
                 <?php ob_start();
 }
 $_prefixVariable3 = ob_get_clean();
@@ -92,8 +92,8 @@ if ($_smarty_tpl->tpl_vars['permission']->value == 5) {
 $_prefixVariable4 = ob_get_clean();
 echo $_prefixVariable4;?>
 
-                <li class=""><a href="ManagerPageController.php?action=member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
-                <li><a href="managerPageController.php?action=product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
+                <li class=""><a href="/shopping/controller/ManagerPageController.php/member"><span class="glyphicon glyphicon-user"></span> 會員管理 <span class="sr-only">(current)</span></a></li>
+                <li><a href="/shopping/controller/managerPageController.php/product"><span class="glyphicon glyphicon-list-alt"></span> 產品管理 </a></li>
                 <?php ob_start();
 }
 $_prefixVariable5 = ob_get_clean();
@@ -122,8 +122,8 @@ echo $_prefixVariable5;?>
                         </div>
                         <button type="button" class="btn btn-default">搜尋商品</button>
                 </form>
-                <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
-                <li><a href="PageController.php?action=shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
+                <li><a href="/shopping/controller/PageController.php/shoppingcar"><span class="glyphicon glyphicon-list-alt"></span> 我的訂單</a></li>
+                <li><a href="/shopping/controller/PageController.php/shoppingcar"><span class="glyphicon glyphicon-shopping-cart"></span> 購物車</a></li>
                 <li class="dropdown">
                 </li>
             </ul>
@@ -135,7 +135,7 @@ echo $_prefixVariable5;?>
             <div class="col-md-1">
             </div>
             <div class="col-md-10">
-                <img src="../img/bg1.jpg" style="width:100%;height:500px;">
+                <img src="/shopping/img/bg1.jpg" style="width:100%;height:500px;">
             </div>
         </div>
     </div>
@@ -159,7 +159,7 @@ echo $_smarty_tpl->tpl_vars['product_item']->value['name'];
 $_prefixVariable7 = ob_get_clean();
 echo $_prefixVariable7;?>
 </b></div>
-                <img src="../img/<?php ob_start();
+                <img src="/shopping/img/<?php ob_start();
 echo $_smarty_tpl->tpl_vars['product_item']->value['image'];
 $_prefixVariable8 = ob_get_clean();
 echo $_prefixVariable8;?>
